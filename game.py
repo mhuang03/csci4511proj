@@ -48,6 +48,7 @@ class TTT3D(Game):
             print("Winner:", "X" if state.utility == 1 else "O")
         print(label)
         print(("\n" + between + "\n").join(strs))
+        print()
 
     def result(self, state, move: Tuple[int, int, int]) -> GameState:
         """
