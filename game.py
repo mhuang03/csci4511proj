@@ -153,3 +153,12 @@ class TTT3D(Game):
     def terminal_test(self, state) -> bool:
         return self.detect_win(state.board) != 0 or len(state.moves) == 0
 
+    def play_game(self, *players):
+        state = self.initial
+        while True:
+            for player in players:
+                move = player(self, state)
+                state = self.result(state, move)
+                self.display(state)
+                if self.terminal_test(state):
+                    return self.utility(state, self.to_move(self.initial))
