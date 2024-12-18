@@ -36,27 +36,33 @@ def good_eval(state):
         for orient in (-1, 1):
             sum = 0
             for which in range(4):
-                sum += state[x][which][(orient*which) % 4]
+                sum += state[x][which][calcDiag(orient, which)]
             eval += quicksum(sum, add1, add2, add3)
     for y in range(4):
         for orient in (-1, 1):
             sum = 0
             for which in range(4):
-                sum += state[which][y][(orient*which) % 4]
+                sum += state[which][y][calcDiag(orient, which)]
             eval += quicksum(sum, add1, add2, add3)
     for z in range(4):
         for orient in (-1, 1):
             sum = 0
             for which in range(4):
-                sum += state[which][(orient*which) % 4][z]
+                sum += state[calcDiag(orient, which)][calcDiag(orient, which)][z]
             eval += quicksum(sum, add1, add2, add3)
     for orient1 in (-1, 1):
         for orient2 in (-1, 1):
             sum = 0
             for which in range(4):
-                sum += state[which][(orient1*which) % 4][(orient2*which) % 4]
+                sum += state[which][calcDiag(orient1, which)][calcDiag(orient2, which)]
             eval += quicksum(sum, add1, add2, add3)
     return eval
+
+def calcDiag(orient, which):
+    if orient == 1:
+        return which
+    else:
+        return 4-which
 
 def quicksum(val, add1, add2, add3):
     if val == 4:
