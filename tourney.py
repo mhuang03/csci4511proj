@@ -2,8 +2,11 @@ import sys
 sys.path.append('aima-python')
 from games4e import *
 import math
+from game import *
 
 def good_eval(state):
+    board = state.board
+
     if state.to_move == 1:
         add1 = 100
         add2 = 1
@@ -18,43 +21,43 @@ def good_eval(state):
         for y in range(4):
             sum = 0
             for z in range(4):
-                sum += state[x][y][z]
+                sum += board[x][y][z]
             eval += quicksum(sum, add1, add2, add3)
     for x in range(4):
         for z in range(4):
             sum = 0
             for y in range(4):
-                sum += state[x][y][z]
+                sum += board[x][y][z]
             eval += quicksum(sum, add1, add2, add3)
     for y in range(4):
         for z in range(4):
             sum = 0
             for x in range(4):
-                sum += state[x][y][z]
+                sum += board[x][y][z]
             eval += quicksum(sum, add1, add2, add3)
     for x in range(4):
         for orient in (-1, 1):
             sum = 0
             for which in range(4):
-                sum += state[x][which][(orient*which) % 4]
+                sum += board[x][which][(orient*which) % 4]
             eval += quicksum(sum, add1, add2, add3)
     for y in range(4):
         for orient in (-1, 1):
             sum = 0
             for which in range(4):
-                sum += state[which][y][(orient*which) % 4]
+                sum += board[which][y][(orient*which) % 4]
             eval += quicksum(sum, add1, add2, add3)
     for z in range(4):
         for orient in (-1, 1):
             sum = 0
             for which in range(4):
-                sum += state[which][(orient*which) % 4][z]
+                sum += board[which][(orient*which) % 4][z]
             eval += quicksum(sum, add1, add2, add3)
     for orient1 in (-1, 1):
         for orient2 in (-1, 1):
             sum = 0
             for which in range(4):
-                sum += state[which][(orient1*which) % 4][(orient2*which) % 4]
+                sum += board[which][(orient1*which) % 4][(orient2*which) % 4]
             eval += quicksum(sum, add1, add2, add3)
     return eval
 
@@ -72,11 +75,15 @@ def quicksum(val, add1, add2, add3):
 
 
 def ab_custom_player3(game, state):
-    return alpha_beta_cutoff_search(state, game, d=3, eval_fn=good_eval)
+    return alpha_beta_cutoff_search(state, game, d=4, eval_fn=good_eval)
+
+def random_player(game, state):
+    return random.choice(state.moves)
 
 class Tourney1:
     def __init__(self):
         pass
 
-def main():
-    tourney = Tourney1()
+if __name__ == "__main__":
+    tt = TTT3D()
+    print(tt.play_game(random_player, random_player))
