@@ -39,27 +39,33 @@ def good_eval(state):
         for orient in (-1, 1):
             sum = 0
             for which in range(4):
-                sum += board[x][which][(orient*which) % 4]
+                sum += board[x][which][calcDiag(orient, which)]
             eval += quicksum(sum, add1, add2, add3)
     for y in range(4):
         for orient in (-1, 1):
             sum = 0
             for which in range(4):
-                sum += board[which][y][(orient*which) % 4]
+                sum += board[which][y][calcDiag(orient, which)]
             eval += quicksum(sum, add1, add2, add3)
     for z in range(4):
         for orient in (-1, 1):
             sum = 0
             for which in range(4):
-                sum += board[which][(orient*which) % 4][z]
+                sum += board[calcDiag(orient, which)][calcDiag(orient, which)][z]
             eval += quicksum(sum, add1, add2, add3)
     for orient1 in (-1, 1):
         for orient2 in (-1, 1):
             sum = 0
             for which in range(4):
-                sum += board[which][(orient1*which) % 4][(orient2*which) % 4]
+                sum += board[which][calcDiag(orient1, which)][calcDiag(orient2, which)]
             eval += quicksum(sum, add1, add2, add3)
     return eval
+
+def calcDiag(orient, which):
+    if orient == 1:
+        return which
+    else:
+        return 4-which
 
 def quicksum(val, add1, add2, add3):
     if val == 4:
@@ -74,8 +80,11 @@ def quicksum(val, add1, add2, add3):
 
 
 
-def ab_custom_player3(game, state):
-    return alpha_beta_cutoff_search(state, game, d=4, eval_fn=good_eval)
+def ab_custom_player1(game, state):
+    return alpha_beta_cutoff_search(state, game, d=3, eval_fn=good_eval)
+
+def ab_custom_player2(game, state):
+    return alpha_beta_cutoff_search(state, game, d=3, eval_fn=lambda x: -good_eval(x))
 
 def random_player(game, state):
     return random.choice(state.moves)
