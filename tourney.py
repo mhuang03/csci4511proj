@@ -65,23 +65,23 @@ def calcDiag(orient, which):
     if orient == 1:
         return which
     else:
-        return 4-which
+        return 3-which
 
 def quicksum(val, add1, add2, add3):
     if val == 4:
         return add3
-    if sum == 3:
+    if val == 3:
         return add2
-    if sum == -4:
+    if val == -4:
         return -add3
-    if sum == -3:
+    if val == -3:
         return -add1
     return 0
 
 
 
 def ab_custom_player1(game, state):
-    return alpha_beta_cutoff_search(state, game, d=3, eval_fn=good_eval)
+    return alpha_beta_cutoff_search(state, game, d=1, eval_fn=good_eval)
 
 def ab_custom_player2(game, state):
     return alpha_beta_cutoff_search(state, game, d=3, eval_fn=lambda x: -good_eval(x))
@@ -89,13 +89,10 @@ def ab_custom_player2(game, state):
 def mcts_player(game, state):
     return monte_carlo_tree_search(state, game, N=1000)
 
-def random_player(game, state):
-    return random.choice(state.moves)
-
 class Tourney1:
     def __init__(self):
         pass
 
 if __name__ == "__main__":
     tt = TTT3D()
-    print(tt.play_game(random_player, random_player))
+    print(tt.play_game(ab_custom_player1, ab_custom_player2))
