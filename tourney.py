@@ -86,6 +86,9 @@ def ab_custom_player1(game, state):
 def ab_custom_player2(game, state):
     return alpha_beta_cutoff_search(state, game, d=3, eval_fn=lambda x: -good_eval(x))
 
+def mcts_player(game, state):
+    return monte_carlo_tree_search(state, game, N=1000)
+
 def random_player(game, state):
     return random.choice(state.moves)
 
