@@ -91,8 +91,7 @@ class TTT3D(Game):
         return moves
 
     def utility(self, state, player):
-        """Return the value to player; 1 for win, -1 for loss, 0 otherwise."""
-        return state.utility if player == 1 else -state.utility
+        return state.utility
 
     def detect_win(self, board) -> int:
         """
