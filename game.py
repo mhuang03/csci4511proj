@@ -67,19 +67,12 @@ class TTT3D(Game):
         moves = state.moves.copy()
         moves.remove(move)
 
-        gs = GameState(
+        return GameState(
             to_move= 1 if state.to_move == -1 else -1,
             utility=self.detect_win(board),
             board=board,
             moves=moves
         )
-        # print()
-        # print(move)
-        # print(state)
-        # self.display(state)
-        # print(gs)
-        # self.display(gs)
-        return gs
 
     def actions(self, state) -> list[Tuple[int, int, int]]:
         """
@@ -154,12 +147,13 @@ class TTT3D(Game):
     def terminal_test(self, state) -> bool:
         return self.detect_win(state.board) != 0 or len(state.moves) == 0
 
-    def play_game(self, *players):
+    def play_game(self, *players ,verbose=False):
         state = self.initial
         while True:
             for player in players:
                 move = player(self, state)
                 state = self.result(state, move)
-                self.display(state)
+                if verbose:
+                    self.display(state)
                 if self.terminal_test(state):
                     return self.utility(state, self.to_move(self.initial))
