@@ -30,20 +30,20 @@
         "done": true
     },
     "DQL vs DQL": {
-        "X": 0,
-        "O": 1,
+        "X": 1,
+        "O": 0,
         "ties": 0,
         "done": true
     },
     "DQL vs Random": {
-        "X": 26,
-        "O": 74,
+        "X": 14,
+        "O": 86,
         "ties": 0,
         "done": true
     },
     "DQL vs MCTS": {
         "X": 0,
-        "O": 5,
+        "O": 4,
         "ties": 0,
         "done": false
     }

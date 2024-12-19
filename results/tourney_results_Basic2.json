@@ -30,15 +30,27 @@
         "done": true
     },
     "Basic2 vs MCTS": {
-        "X": 45,
+        "X": 100,
         "O": 0,
         "ties": 0,
-        "done": false
+        "done": true
     },
     "Basic2 vs Funny": {
         "X": 1,
         "O": 0,
         "ties": 0,
         "done": true
+    },
+    "Basic2 vs DQL": {
+        "X": 1,
+        "O": 0,
+        "ties": 0,
+        "done": true
+    },
+    "Basic2 vs MCTS-H1": {
+        "X": 6,
+        "O": 0,
+        "ties": 0,
+        "done": false
     }
 }

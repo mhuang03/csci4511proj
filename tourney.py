@@ -117,8 +117,8 @@ if __name__ == "__main__":
                 }
                 print(f"X: {p1_name}, O: {p2_name}; X wins {x_wins} times, O wins {o_wins} times, {ties} ties")
 
-            with open(filename, "w") as file:
-                json.dump(results, file, indent=4)
+                with open(filename, "w") as file:
+                    json.dump(results, file, indent=4)
 
     except KeyboardInterrupt:
         print("Interrupted")

@@ -1,7 +1,13 @@
 {
     "MCTS vs AB1": {
         "X": 0,
-        "O": 62,
+        "O": 100,
+        "ties": 0,
+        "done": true
+    },
+    "MCTS vs AB2": {
+        "X": 0,
+        "O": 25,
         "ties": 0,
         "done": false
     }

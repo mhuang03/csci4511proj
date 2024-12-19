@@ -18,10 +18,10 @@
         "done": true
     },
     "AB2 vs MCTS": {
-        "X": 54,
+        "X": 100,
         "O": 0,
         "ties": 0,
-        "done": false
+        "done": true
     },
     "AB2 vs Basic1": {
         "X": 1,
@@ -40,5 +40,17 @@
         "O": 0,
         "ties": 0,
         "done": true
+    },
+    "AB2 vs DQL": {
+        "X": 1,
+        "O": 0,
+        "ties": 0,
+        "done": true
+    },
+    "AB2 vs MCTS-H1": {
+        "X": 5,
+        "O": 0,
+        "ties": 0,
+        "done": false
     }
 }
