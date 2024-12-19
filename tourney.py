@@ -64,7 +64,7 @@ if __name__ == "__main__":
                 sys.exit(1)
 
             player1_list = [(arg1, all_players_dict[arg2])]
-            player2_list = [(arg1, all_players_dict[arg2])]
+            player2_list = [(arg2, all_players_dict[arg2])]
         else:
             print("Usage: python tourney.py [player1] [player2]")
             sys.exit(1)
