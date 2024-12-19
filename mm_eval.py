@@ -1,5 +1,4 @@
-
-def mm_eval(state):
+def mm_eval_good(state):
     board = state.board
 
     if state.to_move == 1:
@@ -73,3 +72,15 @@ def quicksum(val, add1, add2, add3):
         return -add1
     return 0
 
+def mm_eval_basic(state):
+    return state.detect_win(state)
+
+def mm_eval_funny(state):
+    board = state.board
+    sum = 0
+    for x in range(4):
+        for y in range(4):
+            for z in range(4):
+                if board[x][y][z] != 0:
+                    sum += x + 4 * y + 16 * z
+    return sum

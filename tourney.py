@@ -12,7 +12,7 @@ def mcts_player(game, state):
 
 def ab_player(depth):
     def player(game, state):
-        return alpha_beta_cutoff_search(state, game, d=depth, eval_fn=mm_eval)
+        return alpha_beta_cutoff_search(state, game, d=depth, eval_fn=mm_eval_good)
     return player
 
 
