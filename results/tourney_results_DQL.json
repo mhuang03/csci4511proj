@@ -43,7 +43,7 @@
     },
     "DQL vs MCTS": {
         "X": 0,
-        "O": 4,
+        "O": 28,
         "ties": 0,
         "done": false
     }

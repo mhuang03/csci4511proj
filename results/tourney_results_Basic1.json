@@ -48,7 +48,7 @@
         "done": true
     },
     "Basic1 vs MCTS-H1": {
-        "X": 8,
+        "X": 15,
         "O": 1,
         "ties": 0,
         "done": false

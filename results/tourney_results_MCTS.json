@@ -7,7 +7,7 @@
     },
     "MCTS vs AB2": {
         "X": 0,
-        "O": 25,
+        "O": 50,
         "ties": 0,
         "done": false
     }

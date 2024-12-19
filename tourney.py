@@ -40,7 +40,7 @@ if __name__ == "__main__":
     }
     all_players = [i for i in deterministic.items()] + [i for i in stochastic.items()]
     player1_list = all_players
-
+    player2_list = all_players
 
     filename = "results/tourney_results.json"
     if sys.argv:
@@ -56,16 +56,18 @@ if __name__ == "__main__":
                 sys.exit(1)
         elif len(sys.argv) == 3:
             all_players_dict = {k: v for k, v in all_players}
-            player1 = sys.argv[1]
-            player2 = sys.argv[2]
+            arg1 = sys.argv[1]
+            arg2 = sys.argv[2]
 
-            if player1 not in all_players_dict or player2 not in all_players_dict:
-                print(f"Unknown player {player1} or {player2}")
+            if arg1 not in all_players_dict or arg2 not in all_players_dict:
+                print(f"Unknown player {arg1} or {arg2}")
                 sys.exit(1)
 
-            tt = TTT3D()
-            result = tt.play_game(all_players_dict[player1], all_players_dict[player2], verbose=True)
-            sys.exit(0)
+            player1_list = [(arg1, all_players_dict[arg2])]
+            player2_list = [(arg1, all_players_dict[arg2])]
+        else:
+            print("Usage: python tourney.py [player1] [player2]")
+            sys.exit(1)
 
 
     try:
@@ -74,13 +76,10 @@ if __name__ == "__main__":
             filename = f"results/tourney_results_{p1_name}.json"
 
             results = {}
-            try:
-                with open(filename, "r") as file:
-                    results = json.load(file)
-            except Exception as _:
-                pass
+            with open(filename, "r") as file:
+                results = json.load(file)
 
-            for player2 in all_players:
+            for player2 in player2_list:
                 p2_name, p2 = player2
 
                 x_wins, o_wins, ties = 0, 0, 0
@@ -117,8 +116,14 @@ if __name__ == "__main__":
                 }
                 print(f"X: {p1_name}, O: {p2_name}; X wins {x_wins} times, O wins {o_wins} times, {ties} ties")
 
-                with open(filename, "w") as file:
-                    json.dump(results, file, indent=4)
+                try:
+                    with open(filename, "r") as file:
+                        existing_results = json.load(file)
+                    existing_results.update(results)
+                    with open(filename, "w") as file:
+                        json.dump(existing_results, file, indent=4)
+                except Exception as _:
+                    pass
 
     except KeyboardInterrupt:
         print("Interrupted")
@@ -130,5 +135,8 @@ if __name__ == "__main__":
         }
 
     finally:
+        with open(filename, "r") as file:
+            existing_results = json.load(file)
+        existing_results.update(results)
         with open(filename, "w") as file:
-            json.dump(results, file, indent=4)
+            json.dump(existing_results, file, indent=4)

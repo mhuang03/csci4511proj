@@ -19,9 +19,9 @@
     },
     "Random vs MCTS": {
         "X": 0,
-        "O": 90,
+        "O": 100,
         "ties": 0,
-        "done": false
+        "done": true
     },
     "Random vs Basic2": {
         "X": 0,
@@ -46,5 +46,11 @@
         "O": 100,
         "ties": 0,
         "done": true
+    },
+    "Random vs MCTS-H1": {
+        "X": 0,
+        "O": 5,
+        "ties": 0,
+        "done": false
     }
 }

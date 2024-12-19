@@ -48,7 +48,7 @@
         "done": true
     },
     "Funny vs MCTS-H1": {
-        "X": 7,
+        "X": 20,
         "O": 0,
         "ties": 0,
         "done": false
