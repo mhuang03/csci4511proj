@@ -3,7 +3,7 @@ import json
 from games4e import monte_carlo_tree_search, alpha_beta_cutoff_search, random_player
 from game import *
 from mm_eval import mm_eval
-from mcts_hybrid import mcts_hybrid_rollout_search
+from mcts_hybrid_rollout import mcts_hybrid_rollout_search
 
 
 def mcts_player(game, state):

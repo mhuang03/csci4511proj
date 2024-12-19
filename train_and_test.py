@@ -1,6 +1,6 @@
 from game import TTT3D
 from deep_q_learning import train_dql_agent, DQLAgent, dql_player
-from tourney import ab_custom_player1, ab_custom_player2
+from tourney import ab_player
 from mcts_hybrid import hybrid_player
 import torch
 
@@ -19,8 +19,8 @@ def run_tournament(num_games=10):
     
     players = {
         "DQL": dql_player,
-        "Alpha-Beta-1": ab_custom_player1,
-        "Alpha-Beta-2": ab_custom_player2,
+        "Alpha-Beta-1": ab_player(1),
+        "Alpha-Beta-2": ab_player(2),
         "MCTS-Hybrid": hybrid_player
     }
     
