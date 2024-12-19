@@ -140,10 +140,10 @@ class DQLAgent:
         
         return loss.item()
 
-def train_dql_agent(num_episodes: int = 1000):
+def train_dql_agent(agent=None, num_episodes: int = 1000):
     """Train DQL agent through self-play."""
     game = TTT3D()
-    agent = DQLAgent()
+    agent = agent or DQLAgent()
     
     for episode in range(num_episodes):
         state = game.initial
@@ -201,6 +201,7 @@ def dql_player(game, state):
     return agent.select_action(state, game.actions(state))
 
 if __name__ == "__main__":
-    # Example usage
-    trained_agent = train_dql_agent(num_episodes=1000)
-    torch.save(trained_agent.q_network.state_dict(), "ttt3d_dql_model.pth")
+    agent = DQLAgent()
+    agent.q_network.load_state_dict(torch.load("ttt3d_dql_model_old.pth"))
+    trained_agent = train_dql_agent(agent=agent, num_episodes=10000)
+    torch.save(trained_agent.q_network.state_dict(), "ttt3d_dql_model_old.pth")
