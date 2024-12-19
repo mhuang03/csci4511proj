@@ -1,0 +1,44 @@
+{
+    "Funny vs AB1": {
+        "X": 0,
+        "O": 1,
+        "ties": 0,
+        "done": true
+    },
+    "Funny vs AB2": {
+        "X": 0,
+        "O": 1,
+        "ties": 0,
+        "done": true
+    },
+    "Funny vs Basic1": {
+        "X": 0,
+        "O": 1,
+        "ties": 0,
+        "done": true
+    },
+    "Funny vs Basic2": {
+        "X": 0,
+        "O": 1,
+        "ties": 0,
+        "done": true
+    },
+    "Funny vs Funny": {
+        "X": 1,
+        "O": 0,
+        "ties": 0,
+        "done": true
+    },
+    "Funny vs Random": {
+        "X": 100,
+        "O": 0,
+        "ties": 0,
+        "done": true
+    },
+    "Funny vs MCTS": {
+        "X": 27,
+        "O": 3,
+        "ties": 0,
+        "done": false
+    }
+}

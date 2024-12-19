@@ -1,0 +1,44 @@
+{
+    "Basic2 vs AB1": {
+        "X": 0,
+        "O": 1,
+        "ties": 0,
+        "done": true
+    },
+    "Basic2 vs AB2": {
+        "X": 1,
+        "O": 0,
+        "ties": 0,
+        "done": true
+    },
+    "Basic2 vs Basic1": {
+        "X": 1,
+        "O": 0,
+        "ties": 0,
+        "done": true
+    },
+    "Basic2 vs Basic2": {
+        "X": 1,
+        "O": 0,
+        "ties": 0,
+        "done": true
+    },
+    "Basic2 vs Random": {
+        "X": 100,
+        "O": 0,
+        "ties": 0,
+        "done": true
+    },
+    "Basic2 vs MCTS": {
+        "X": 45,
+        "O": 0,
+        "ties": 0,
+        "done": false
+    },
+    "Basic2 vs Funny": {
+        "X": 1,
+        "O": 0,
+        "ties": 0,
+        "done": true
+    }
+}

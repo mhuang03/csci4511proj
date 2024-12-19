@@ -1,0 +1,44 @@
+{
+    "Random vs AB1": {
+        "X": 0,
+        "O": 100,
+        "ties": 0,
+        "done": true
+    },
+    "Random vs AB2": {
+        "X": 0,
+        "O": 100,
+        "ties": 0,
+        "done": true
+    },
+    "Random vs Random": {
+        "X": 51,
+        "O": 49,
+        "ties": 0,
+        "done": true
+    },
+    "Random vs MCTS": {
+        "X": 0,
+        "O": 34,
+        "ties": 0,
+        "done": false
+    },
+    "Random vs Basic1": {
+        "X": 100,
+        "O": 0,
+        "ties": 0,
+        "done": true
+    },
+    "Random vs Basic2": {
+        "X": 0,
+        "O": 100,
+        "ties": 0,
+        "done": true
+    },
+    "Random vs Funny": {
+        "X": 0,
+        "O": 100,
+        "ties": 0,
+        "done": true
+    }
+}

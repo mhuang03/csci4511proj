@@ -1,0 +1,50 @@
+{
+    "DQL vs AB1": {
+        "X": 0,
+        "O": 1,
+        "ties": 0,
+        "done": true
+    },
+    "DQL vs AB2": {
+        "X": 0,
+        "O": 1,
+        "ties": 0,
+        "done": true
+    },
+    "DQL vs Basic1": {
+        "X": 0,
+        "O": 1,
+        "ties": 0,
+        "done": true
+    },
+    "DQL vs Basic2": {
+        "X": 0,
+        "O": 1,
+        "ties": 0,
+        "done": true
+    },
+    "DQL vs Funny": {
+        "X": 0,
+        "O": 1,
+        "ties": 0,
+        "done": true
+    },
+    "DQL vs DQL": {
+        "X": 0,
+        "O": 1,
+        "ties": 0,
+        "done": true
+    },
+    "DQL vs Random": {
+        "X": 26,
+        "O": 74,
+        "ties": 0,
+        "done": true
+    },
+    "DQL vs MCTS": {
+        "X": 0,
+        "O": 5,
+        "ties": 0,
+        "done": false
+    }
+}
