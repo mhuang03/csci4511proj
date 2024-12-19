@@ -40,11 +40,5 @@
         "O": 86,
         "ties": 0,
         "done": true
-    },
-    "DQL vs MCTS": {
-        "X": 0,
-        "O": 28,
-        "ties": 0,
-        "done": false
     }
 }

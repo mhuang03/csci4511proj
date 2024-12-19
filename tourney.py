@@ -63,7 +63,7 @@ if __name__ == "__main__":
                 print(f"Unknown player {arg1} or {arg2}")
                 sys.exit(1)
 
-            player1_list = [(arg1, all_players_dict[arg2])]
+            player1_list = [(arg1, all_players_dict[arg1])]
             player2_list = [(arg2, all_players_dict[arg2])]
         else:
             print("Usage: python tourney.py [player1] [player2]")
